@@ -30,7 +30,7 @@ module "redis-prod" {
   instance_name = "redis-prod"
   cluster_ipv4_cidr = "10.123.0.0/14"
   count = "3"
-  raw_image_source = "https://storage.googleapis.com/image-bucket/ackee-mongodb3.4-disk-latest.tar.gz"
+  raw_image_source = "https://storage.googleapis.com/image-bucket/ackee-redis5.0-disk-latest.tar.gz"
 }
 
 ```
