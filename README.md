@@ -1,9 +1,9 @@
 # Ackee GCE Redis Terraform module
 
-This module is primary written for provisioning of GCE instance from our Redis image (https://github.com/AckeeDevOps/packer-redis)
+This module is primary written for provisioning of GCE instance from our Redis image (https://github.com/AckeeCZ/packer-redis)
 
 It does a few things :
-* Downloads RAW disk from GCS and create an image from it. (you can generate your own image with Packer using https://github.com/AckeeDevOps/packer-redis)
+* Downloads RAW disk from GCS and create an image from it. (you can generate your own image with Packer using https://github.com/AckeeCZ/packer-redis)
 * Create SSH key for instance provisioning
 * Provision Stackdriver config for redis
 * Create (GCP) firewall rules so GKE pods can reach GCE Redis instances
@@ -11,7 +11,7 @@ It does a few things :
 
 ## Configuration
 
-https://github.com/AckeeDevOps/terraform-redis/blob/master/variables.tf explanation  (followed by default values if applicable) :
+https://github.com/AckeeCZ/terraform-redis/blob/master/variables.tf explanation  (followed by default values if applicable) :
 
 * project - name of GCP project
 * zone - zone of GCP project
@@ -24,7 +24,7 @@ https://github.com/AckeeDevOps/terraform-redis/blob/master/variables.tf explanat
 
 ```hcl
 module "redis-prod" {
-  source = "github.com/AckeeDevOps/terraform-redis?ref=v1.0.0"
+  source = "github.com/AckeeCZ/terraform-redis?ref=v1.0.0"
   project = "my-gcp-project"
   zone = "europe-west3-c"
   instance_name = "redis-prod"
