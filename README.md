@@ -18,4 +18,19 @@ https://github.com/AckeeDevOps/terraform-redis/blob/master/variables.tf explanat
 * instance_name - base for GCE instances name
 * cluster_ipv4_cidr - IPv4 CIDR of GKE cluster - for firewall rule setting
 * node_count:1 - number of Redis nodes to deploy
-* raw_image_source -  URL of tar archive containing RAW source for Redis image
+* raw_image_source -  URL of tar archive containing RAW source for Redis image (you can use Packer image template to generate image, as mentioned above)
+
+## Usage
+
+```hcl
+module "redis-prod" {
+  source = "github.com/AckeeDevOps/terraform-redis?ref=v1.0.0"
+  project = "my-gcp-project"
+  zone = "europe-west3-c"
+  instance_name = "redis-prod"
+  cluster_ipv4_cidr = "10.123.0.0/14"
+  count = "3"
+  raw_image_source = "https://storage.googleapis.com/image-bucket/ackee-mongodb3.4-disk-latest.tar.gz"
+}
+
+```
