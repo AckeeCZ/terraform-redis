@@ -24,12 +24,12 @@ https://github.com/AckeeCZ/terraform-redis/blob/master/variables.tf explanation 
 
 ```hcl
 module "redis-prod" {
-  source = "github.com/AckeeCZ/terraform-redis?ref=v1.0.0"
+  source = "github.com/AckeeCZ/terraform-redis?ref=v1.0.1"
   project = "my-gcp-project"
   zone = "europe-west3-c"
   instance_name = "redis-prod"
   cluster_ipv4_cidr = "10.123.0.0/14"
-  count = "3"
+  node_count = "3"
   raw_image_source = "https://storage.googleapis.com/image-bucket/ackee-redis5.0-disk-latest.tar.gz"
 }
 
