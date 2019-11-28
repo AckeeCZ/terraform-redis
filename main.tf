@@ -55,7 +55,7 @@ resource "google_compute_instance" "redis_instance" {
     destination = "/tmp/redis-stackdriver.conf"
 
     connection {
-      host        = "${google_compute_instance.redis_instance[count.index].network_interface.0.access_config.0.nat_ip}"
+      host        = "${self.network_interface.0.access_config.0.nat_ip}"
       type        = "ssh"
       user        = "devops"
       private_key = tls_private_key.provision_key.private_key_pem
@@ -65,7 +65,7 @@ resource "google_compute_instance" "redis_instance" {
 
   provisioner "remote-exec" {
     connection {
-      host        = "${google_compute_instance.redis_instance[count.index].network_interface.0.access_config.0.nat_ip}"
+      host        = "${self.network_interface.0.access_config.0.nat_ip}"
       type        = "ssh"
       user        = "devops"
       private_key = tls_private_key.provision_key.private_key_pem
