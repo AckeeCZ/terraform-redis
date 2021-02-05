@@ -1,3 +1,7 @@
+# Moved
+
+Please use repository on new URL : https://github.com/AckeeCZ/terraform-memorystore-redis
+
 # Ackee GCE Redis Terraform module
 
 This module is primary written for provisioning of GCE instance from our Redis image (https://github.com/AckeeCZ/packer-redis)
